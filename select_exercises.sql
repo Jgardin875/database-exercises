@@ -2,12 +2,12 @@ use albums_db;
 #3a How many rows are in the albums table?
 select count(*) from albums; # returned 31
 
-select * from albums; #jsut checking it out
+select * from albums; #just checking it out
 
 #3b How many unique artist names are in the albums table?
 select count(distinct(artist)) from albums; # returns 23
 # 3c) What is the primary key for the albums table?  
-# 3c Answer: id
+# 3c Answer: id (just looked at it in bottom left of screen)
 #3d What is the oldest release date for any album in the albums table? What is the most recent release date?
 select * from albums
 where release_date = (select max(release_date) from albums); # returned id 18, 2011
@@ -31,7 +31,7 @@ where release_date between 1990 and 1999;
 select name from albums
 where sales < 20; 
 #4f All the albums with a genre of "Rock". Why do these query results not include albums with a genre of "Hard rock" or "Progressive rock"?
-#4f Answer: Used "Rock" which is exact match. Need to use "%rock%" for wild card matches or use "like" function
+#4f Answer: Used "Rock" which is exact match. Need to use "%rock%" for wild card matches and "like" function
 
 #Rock
 select * from albums
