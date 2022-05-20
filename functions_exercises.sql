@@ -1,11 +1,14 @@
 use employees;
 
 #2Write a query to to find all employees whose last name starts and ends with 'E'. Use concat() to combine their first and last name together as a single column named full_name. 
-select concat(first_name, ' ', last_name) as full_name from employees
+select concat(first_name, last_name) as full_name from employees
+where last_name like 'e%e';
+
+select concat(first_name, ' ', last_name) as full_name from employees #easier for me to read with space
 where last_name like 'e%e';
 
 #3 Convert the names produced in your last query to all uppercase. 
-select upper(concat(first_name, ' ', last_name)) as full_name from employees
+select upper(concat(first_name, last_name)) as full_name from employees
 where last_name like 'e%e';
 
 #4 Find all employees hired in the 90s and born on Christmas. Use datediff() function to find how many days they have been working at the company (Hint: You will also need to use NOW() or CURDATE()), 
