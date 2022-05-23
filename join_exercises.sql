@@ -157,6 +157,8 @@ and dept_emp.to_date > now()
 group by dept_name
 order by avg(salary) desc
 limit 1;
+# cannot do select max(avg(salary)) because max and avg are query functions, you would need a query within a query to do max and avg
+
 
 #8 Who is the highest paid employee in the Marketing department?
 select employees.first_name, employees.last_name
@@ -197,6 +199,7 @@ join
 departments on dept_emp.dept_no = departments.dept_no
 group by dept_name
 order by avg(salary) desc;
+#round works becuase it is a basic function-not a query within a query
 
 select * from titles;
 select * from dept_emp;
